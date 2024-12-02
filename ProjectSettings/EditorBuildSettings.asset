@@ -5,4 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes: []
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: 213519b364e82d747a6e9b7d1c7c814d, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8683dcc51f5c49b4fa88d00bb7679692,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 6321111277b0c5f4e885a3cb8a442eab, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 8b560c12b8fb2cc47b94482fb7f60b13, type: 2}
