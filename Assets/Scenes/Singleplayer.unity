@@ -344,7 +344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834724079}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24878119, y: -1e-45, z: 0, w: 0.96855974}
+  m_LocalRotation: {x: 0.24878119, y: 0, z: 0, w: 0.96855974}
   m_LocalPosition: {x: 42.17, y: 2.758, z: -32.947998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -933,10 +933,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4447921740201000508, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861839550433568165, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.24878119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861839550433568165, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861839550433568165, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7470179392739950454, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
         type: 3}
       propertyPath: m_Name
       value: Cart + car
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535172057584090990, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
