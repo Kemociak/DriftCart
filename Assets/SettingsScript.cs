@@ -30,7 +30,7 @@ public class SettingsScript : MonoBehaviour
         musicSlider.onValueChanged.AddListener(OnSFXSliderValueChanged);
     }
 
-    private void OnMusicSliderValueChanged(float value)
+    public void OnMusicSliderValueChanged(float value)
     {
         musicSource.volume = value;
 
@@ -38,7 +38,7 @@ public class SettingsScript : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void OnSFXSliderValueChanged(float value)
+    public void OnSFXSliderValueChanged(float value)
     {
         sfxSource.volume = value;
 
