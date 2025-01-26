@@ -933,6 +933,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3732506642023100772, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
+        type: 3}
+      propertyPath: useEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732506642023100772, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
+        type: 3}
+      propertyPath: useTouchControls
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4447921740201000508, guid: 5faa9c88753e2cf4fac6c03adf62bba4,
         type: 3}
       propertyPath: m_Enabled

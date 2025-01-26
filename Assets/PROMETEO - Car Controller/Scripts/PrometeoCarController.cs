@@ -158,6 +158,23 @@ public class PrometeoCarController : MonoBehaviour
       WheelFrictionCurve RRwheelFriction;
       float RRWextremumSlip;
 
+
+
+
+    //Nasze controlki
+    //public float maxSteeringAngle = 30f; // Maksymalny k¹t skrêtu.
+    public float throttleSensitivity = 0.1f; // Czu³oœæ na zmiany w osi Y dotyku.
+    public float steeringSensitivity = 0.5f; // Czu³oœæ na ró¿nice w pozycji palców dla skrêtu.
+
+    private Vector2 leftFingerPos; // Pozycja lewego palca.
+    private Vector2 rightFingerPos; // Pozycja prawego palca.
+    private bool leftFingerActive = false; // Czy lewy palec jest na ekranie.
+    private bool rightFingerActive = false; // Czy prawy palec jest na ekranie.
+
+    //private float steeringAxis = 0f; // Sterowanie k¹tem skrêtu.
+    //private float throttleAxis = 0f; // Sterowanie przyspieszeniem.
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -242,7 +259,8 @@ public class PrometeoCarController : MonoBehaviour
         }
 
         if(useTouchControls){
-          if(throttleButton != null && reverseButton != null &&
+            
+            if (throttleButton != null && reverseButton != null &&
           turnRightButton != null && turnLeftButton != null
           && handbrakeButton != null){
 
@@ -261,9 +279,90 @@ public class PrometeoCarController : MonoBehaviour
         }
 
     }
+    void HandleTouchInput()
+    {
+        // Przechwytywanie dotyku na ekranie.
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+            Touch touch = Input.GetTouch(i);
 
-    // Update is called once per frame
-    void Update()
+            // Lewa po³owa ekranu.
+            if (touch.position.x < Screen.width / 2)
+            {
+                if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
+                {
+                    leftFingerActive = true;
+                    leftFingerPos = touch.position;
+                }
+                if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                {
+                    leftFingerActive = false;
+                    leftFingerPos = Vector2.zero;
+                }
+            }
+
+            // Prawa po³owa ekranu.
+            if (touch.position.x > Screen.width / 2)
+            {
+                if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
+                {
+                    rightFingerActive = true;
+                    rightFingerPos = touch.position;
+                }
+                if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                {
+                    rightFingerActive = false;
+                    rightFingerPos = Vector2.zero;
+                }
+            }
+        }
+    }
+    void UpdateCarControls()
+    {
+        // Reset osi steruj¹cych.
+        throttleAxis = 0f;
+        steeringAxis = 0f;
+
+        if (leftFingerActive && rightFingerActive)
+        {
+            // Œrednia pozycja palców (throttle).
+            float averageY = (leftFingerPos.y + rightFingerPos.y) / 2f - Screen.height / 2f;
+            throttleAxis = Mathf.Clamp(averageY / (Screen.height / 2f), -1f, 1f);
+
+            // Ró¿nica pozycji X palców (steering).
+            float deltaX = (rightFingerPos.x - Screen.width / 2f) - (leftFingerPos.x - Screen.width / 2f);
+            steeringAxis = Mathf.Clamp(deltaX / Screen.width, -1f, 1f);
+        }
+
+        // Aktualizuj sterowanie pojazdem.
+        ApplyCarControls();
+    }
+
+    void ApplyCarControls()
+    {
+        // Sterowanie skrêtem.
+        float steeringAngle = steeringAxis * maxSteeringAngle;
+        frontLeftCollider.steerAngle = Mathf.Lerp(frontLeftCollider.steerAngle, steeringAngle, steeringSensitivity);
+        frontRightCollider.steerAngle = Mathf.Lerp(frontRightCollider.steerAngle, steeringAngle, steeringSensitivity);
+
+        // Sterowanie prêdkoœci¹.
+        if (throttleAxis > 0)
+        {
+            GoForward();
+        }
+        else if (throttleAxis < 0)
+        {
+            GoReverse();
+        }
+        else
+        {
+            ThrottleOff();
+        }
+    }
+
+
+// Update is called once per frame
+void Update()
     {
 
       //CAR DATA
@@ -275,19 +374,21 @@ public class PrometeoCarController : MonoBehaviour
       // Save the local velocity of the car in the z axis. Used to know if the car is going forward or backwards.
       localVelocityZ = transform.InverseTransformDirection(carRigidbody.velocity).z;
 
-      //CAR PHYSICS
+        //CAR PHYSICS
 
-      /*
-      The next part is regarding to the car controller. First, it checks if the user wants to use touch controls (for
-      mobile devices) or analog input controls (WASD + Space).
+        /*
+        The next part is regarding to the car controller. First, it checks if the user wants to use touch controls (for
+        mobile devices) or analog input controls (WASD + Space).
 
-      The following methods are called whenever a certain key is pressed. For example, in the first 'if' we call the
-      method GoForward() if the user has pressed W.
+        The following methods are called whenever a certain key is pressed. For example, in the first 'if' we call the
+        method GoForward() if the user has pressed W.
 
-      In this part of the code we specify what the car needs to do if the user presses W (throttle), S (reverse),
-      A (turn left), D (turn right) or Space bar (handbrake).
-      */
-      if (useTouchControls && touchControlsSetup){
+        In this part of the code we specify what the car needs to do if the user presses W (throttle), S (reverse),
+        A (turn left), D (turn right) or Space bar (handbrake).
+        */
+        HandleTouchInput();
+        UpdateCarControls();
+        if (useTouchControls && touchControlsSetup){
 
         if(throttlePTI.buttonPressed){
           CancelInvoke("DecelerateCar");
