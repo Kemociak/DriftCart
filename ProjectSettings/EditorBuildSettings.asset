@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: f1ec224aba4bbd24e9ac0afe8485ea49
+  - enabled: 1
+    path: Assets/Scenes/Map_Supermarket.unity
+    guid: e4971939a9c863a4a8225e53d595be6f
+  - enabled: 1
+    path: Assets/Scenes/Map_City.unity
+    guid: a9319b8dc736c3542bdba94cbda5a4ec
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 213519b364e82d747a6e9b7d1c7c814d, type: 2}

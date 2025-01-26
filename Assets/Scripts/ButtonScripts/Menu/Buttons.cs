@@ -7,12 +7,12 @@ public class Buttons : MonoBehaviour
 {
     public void Singleplayer()
     {
-        SceneManager.LoadScene("Singleplayer");
+        SceneManager.LoadScene("Map_Supermarket");
     }
 
     public void Freeplay()
     {
-        SceneManager.LoadScene("Freeplay");
+        SceneManager.LoadScene("Map_City");
     }
 
     public void Race()
