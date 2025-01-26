@@ -162,6 +162,10 @@ public class PrometeoCarController : MonoBehaviour
 
 
     //Nasze controlki
+    [Space(10)]
+    //The following variables lets you to set up touch controls for mobile devices.
+    [SerializeField]
+    public bool useOurTouchControls = false;
     //public float maxSteeringAngle = 30f; // Maksymalny k¹t skrêtu.
     public float throttleSensitivity = 0.1f; // Czu³oœæ na zmiany w osi Y dotyku.
     public float steeringSensitivity = 0.5f; // Czu³oœæ na ró¿nice w pozycji palców dla skrêtu.
@@ -386,8 +390,15 @@ void Update()
         In this part of the code we specify what the car needs to do if the user presses W (throttle), S (reverse),
         A (turn left), D (turn right) or Space bar (handbrake).
         */
-        HandleTouchInput();
-        UpdateCarControls();
+
+
+
+
+        //Cholera wie czemu nie moge dodaæ atrybutu kolejnego. Zaznaczyæ i klikn¹æ Ctrl + K + U
+
+        //HandleTouchInput();
+        //UpdateCarControls();
+
         if (useTouchControls && touchControlsSetup){
 
         if(throttlePTI.buttonPressed){
