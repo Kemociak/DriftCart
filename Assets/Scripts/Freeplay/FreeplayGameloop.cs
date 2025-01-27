@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,7 +32,8 @@ public class FreeplayGameloop : MonoBehaviour
     public List<GameObject> inactiveSpawners;
 
     int score;
-    // Start is called before the first frame update
+  
+                   //Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1f;
@@ -124,5 +126,7 @@ public class FreeplayGameloop : MonoBehaviour
         hudCanvas.gameObject.SetActive(false);
         endScreen.gameObject.SetActive(true);
         finalScore.text = $"Final score {score}";
+
+        Cursor.lockState = CursorLockMode.None;
     }
 }
