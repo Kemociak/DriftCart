@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &2928583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5411805302723689153, guid: c07bab17bd0561c41913d2a45d0260f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1990329834}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4286111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5435,6 +5447,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: dccc704d9a70b064b8d29fe27fcbc17b, type: 3}
+--- !u!114 &321897772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6705805041336472897, guid: c07bab17bd0561c41913d2a45d0260f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1990329834}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &325363355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9356,6 +9380,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!223 &585563997 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3938021070125830205, guid: c07bab17bd0561c41913d2a45d0260f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1990329834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &605934755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21477,6 +21507,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 71baf848e76aefd4e9d729d470d2081a, type: 3}
+--- !u!114 &1620382281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1727442905955717893, guid: c07bab17bd0561c41913d2a45d0260f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1990329834}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1624426371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27252,11 +27294,11 @@ MonoBehaviour:
   numberOfBags: 5
   numberOfPoints: 100
   penalty: 500
-  hudCanvas: {fileID: 0}
-  endScreen: {fileID: 0}
-  scoreText: {fileID: 0}
-  timeText: {fileID: 0}
-  finalScore: {fileID: 0}
+  hudCanvas: {fileID: 1990329838}
+  endScreen: {fileID: 585563997}
+  scoreText: {fileID: 321897772}
+  timeText: {fileID: 2928583}
+  finalScore: {fileID: 1620382281}
   activeSpawners: []
   inactiveSpawners: []
 --- !u!82 &1944386576
