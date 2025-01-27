@@ -27387,6 +27387,7 @@ MonoBehaviour:
   time: 20
   numberOfBags: 5
   numberOfPoints: 100
+  timeReward: 5
   penalty: 500
   hudCanvas: {fileID: 6493762622600080012}
   endScreen: {fileID: 3938021068273915351}

@@ -14,6 +14,8 @@ public class FreeplayGameloop : MonoBehaviour
     [SerializeField]
     int numberOfPoints;
     [SerializeField]
+    int timeReward;
+    [SerializeField]
     int penalty;
 
 
@@ -91,6 +93,8 @@ public class FreeplayGameloop : MonoBehaviour
 
         score += numberOfPoints; 
         UpdateScoreText();
+        time += timeReward;
+        UpdateTimeText();
     }
 
     public void HandleOtherCollision()
