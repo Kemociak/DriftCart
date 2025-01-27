@@ -17,6 +17,8 @@ public class PauseManager : MonoBehaviour
     private void Start()
     {
         pauseScreen.gameObject.SetActive(false);
+        resumeButton.onClick.AddListener(ResumeGame);
+        exitButton.onClick.AddListener(QuitGame);
     }
 
     void Update()

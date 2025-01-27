@@ -17,4 +17,11 @@ public class ItemCollector : MonoBehaviour
             freeplayGameloop.HandleOtherCollision();
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.collider.CompareTag("Collectables") && !collision.collider.CompareTag("Floor"))
+        {
+            freeplayGameloop.HandleOtherCollision();
+        }
+    }
 }
