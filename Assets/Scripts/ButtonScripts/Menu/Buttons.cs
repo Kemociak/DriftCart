@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
+    [SerializeField]
+    Canvas Menu;
+    [SerializeField]
+    Canvas SettingsScreen;
+    private void Start()
+    {
+        Menu.gameObject.SetActive(true);
+        SettingsScreen.gameObject.SetActive(false);
+    }
     public void Singleplayer()
     {
         SceneManager.LoadScene("Map_Supermarket");
@@ -22,7 +31,13 @@ public class Buttons : MonoBehaviour
 
     public void Settings()
     {
-        SceneManager.LoadScene("Settings");
+        Menu.gameObject.SetActive(false);
+        SettingsScreen.gameObject.SetActive(true);
+    }
+    public void Back()
+    {
+        Menu.gameObject.SetActive(true);
+        SettingsScreen.gameObject.SetActive(false);
     }
 
     public void Quitgame()
