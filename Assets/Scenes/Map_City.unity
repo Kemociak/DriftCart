@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16667,6 +16667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1181087396}
+  - component: {fileID: 1181087397}
   m_Layer: 0
   m_Name: City
   m_TagString: Untagged
@@ -16950,6 +16951,28 @@ Transform:
   - {fileID: 1124499217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1181087397
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181087395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1201145185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27647,6 +27670,7 @@ MonoBehaviour:
   endScreen: {fileID: 1534871510}
   scoreText: {fileID: 941187593}
   timeText: {fileID: 1224648738}
+  finalScore: {fileID: 0}
   activeSpawners: []
   inactiveSpawners: []
 --- !u!1001 &1952889517
