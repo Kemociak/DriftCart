@@ -24,6 +24,8 @@ public class FreeplayGameloop : MonoBehaviour
     TextMeshProUGUI scoreText;
     [SerializeField]
     TextMeshProUGUI timeText;
+    [SerializeField]
+    TextMeshProUGUI finalScore;
 
     public GameObject[] activeSpawners;
     public List<GameObject> inactiveSpawners;
@@ -32,6 +34,7 @@ public class FreeplayGameloop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         hudCanvas.gameObject.SetActive(true);
         endScreen.gameObject.SetActive(false);
         activeSpawners = GameObject.FindGameObjectsWithTag("Collectables");
@@ -116,9 +119,10 @@ public class FreeplayGameloop : MonoBehaviour
 
     void EndGame()
     {
+        Time.timeScale = 0f;
         Debug.Log("Czas siê skoñczy³!");
         hudCanvas.gameObject.SetActive(false);
         endScreen.gameObject.SetActive(true);
-        
+        finalScore.text = $"Final score {score}";
     }
 }
