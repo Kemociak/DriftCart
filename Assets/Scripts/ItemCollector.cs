@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    public int itemCollected = 0;
+    public FreeplayGameloop freeplayGameloop;
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("item"))
+        if (collision.CompareTag("Collectables"))
         {
-            Debug.Log("podniesiono item!");
-
-            itemCollected++;
-
-            Destroy(collision.gameObject);
+            freeplayGameloop.HandleCollectableCollision(collision.gameObject);
+        }
+        else if (!collision.CompareTag("Floor"))
+        {
+            freeplayGameloop.HandleOtherCollision();
         }
     }
 }
