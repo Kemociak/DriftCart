@@ -21,6 +21,7 @@ public class FreeplayGameloop : MonoBehaviour
     Canvas hudCanvas;
     [SerializeField]
     Canvas endScreen;
+ 
     [SerializeField]
     TextMeshProUGUI scoreText;
     [SerializeField]
@@ -60,7 +61,7 @@ public class FreeplayGameloop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void ActivateRandomSpawner()
