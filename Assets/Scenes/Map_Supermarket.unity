@@ -74389,6 +74389,7 @@ GameObject:
   - component: {fileID: 366576922}
   - component: {fileID: 366576924}
   - component: {fileID: 366576925}
+  - component: {fileID: 366576926}
   m_Layer: 0
   m_Name: Muzika
   m_TagString: Untagged
@@ -74550,6 +74551,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetButton: {fileID: 683539786}
   exitButton: {fileID: 218414669}
+--- !u!114 &366576926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366576921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c6cfd389336670468c5f5fd32e39841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 453904713}
+  HUD: {fileID: 825714887}
+  resumeButton: {fileID: 1364337172}
+  exitButton: {fileID: 1194700706}
 --- !u!4 &366629516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5974986913380012265, guid: d8cf39e351e7c82408a1ea1822811ad9,
@@ -91821,6 +91838,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1567182029461747248, guid: 869b55c0dc2962d41a835b0eeb3c4b36,
     type: 3}
   m_PrefabInstance: {fileID: 1943164377}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &453904713 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7870438139506649727, guid: 453db93f855e29a4f977584926051b0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228506931}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &454302025
 PrefabInstance:
@@ -242502,6 +242525,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1194463407}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1194700706 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6568054976185239275, guid: 453db93f855e29a4f977584926051b0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228506931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1194811379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -249519,6 +249554,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 949801187751406570, guid: 453db93f855e29a4f977584926051b0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2411492779682615285, guid: 453db93f855e29a4f977584926051b0d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -277154,6 +277194,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1364314705}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1364337172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2187306761182490848, guid: 453db93f855e29a4f977584926051b0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228506931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1364931172
 PrefabInstance:
   m_ObjectHideFlags: 0
