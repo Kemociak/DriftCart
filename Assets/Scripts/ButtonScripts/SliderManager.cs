@@ -19,7 +19,14 @@ public class AudioManager : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20); // Skala logarytmiczna
+        if (volume <= 0.0001f) // Ustawianie dolnej granicy
+        {
+            audioMixer.SetFloat("MasterVolume", -80f); // Ustaw ciszê
+        }
+        else
+        {
+            audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20); // Skala logarytmiczna
+        }
         PlayerPrefs.SetFloat(VolumePref, volume);
         PlayerPrefs.Save();
     }
